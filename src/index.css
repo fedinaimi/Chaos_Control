@@ -1,120 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 
-* html {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.gradient-bg-hero {
-  background-color: #180223;
-  background-image: radial-gradient(
-      at 0% 0%,
-      rgb(116, 21, 116) 0,
-      transparent 50%
-    ),
-    radial-gradient(at 50% 0%, rgb(70, 35, 121) 0, transparent 50%),
-    radial-gradient(at 100% 0%, rgb(75, 39, 165) 0, transparent 50%);
-}
-
-.gradient-bg-artworks {
-  background-color: #0f0e13;
-  background-image: radial-gradient(
-      at 50% 50%,
-      hsl(302deg 25% 18%) 0,
-      transparent 50%
-    ),
-    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
-    radial-gradient(at 50% 50%, hsla(339, 39%, 25%, 1) 0, transparent 50%);
-}
-
-.gradient-bg-footer {
-  background-color: #151c25;
-  background-image: radial-gradient(
-      at 0% 100%,
-      hsl(330, 61%, 39%) 0,
-      transparent 53%
-    ),
-    radial-gradient(at 50% 150%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
-}
-
-.text-gradient {
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.lds-dual-ring {
-  display: inline-block;
-}
-.lds-dual-ring:after {
-  content: ' ';
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.dashboard {
+.app {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  position: relative;
 }
 
-.sidebar {
-  width: 240px; /* adjust this to your desired width */
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background-color: #2a2e3b;
-  color: #fff;
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.main {
-  flex: 1;
-  padding: 24px;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
 }
 
-.sidebar {
-  /* default styles */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
 
-@media screen and (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .sidebar {
-    width: 200px;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .sidebar {
-    width: 240px;
-  }
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
