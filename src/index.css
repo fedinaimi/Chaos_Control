@@ -73,7 +73,48 @@ body {
     transform: rotate(360deg);
   }
 }
+.dashboard {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
 
+.sidebar {
+  width: 240px; /* adjust this to your desired width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #2a2e3b;
+  color: #fff;
+}
+
+.main {
+  flex: 1;
+  padding: 24px;
+}
+
+.sidebar {
+  /* default styles */
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .sidebar {
+    width: 240px;
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

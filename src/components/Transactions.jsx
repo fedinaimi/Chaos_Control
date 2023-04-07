@@ -18,6 +18,7 @@ const Transactions = () => {
   }, [transactions, end])
 
   return (
+    <section  id='transaction'>
     <div className="bg-[#151c25]">
       <div className="w-4/5 py-10 mx-auto">
         <h4 className="text-white text-3xl font-bold uppercase text-gradient">
@@ -66,6 +67,7 @@ const Transactions = () => {
         ) : null}
       </div>
     </div>
+    </section>
   )
 }
 

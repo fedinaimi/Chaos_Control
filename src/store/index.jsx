@@ -5,6 +5,7 @@ const {setGlobalState , useGlobalState,getGlobalState } = createGlobalState({
     modal : 'scale-0',
     access : 'scale-0',
     ShowModal : 'scale-0',
+    ShowWork : 'scale-0',
     UpdateModal : 'scale-0',
     login:'scale-0',
     loading :{show:false , msg:'Minting in progress...'},
@@ -13,6 +14,8 @@ const {setGlobalState , useGlobalState,getGlobalState } = createGlobalState({
     balance : '',
     nft : null,
     nfts : [],
+    works : [],
+    work : null ,
     transactions:[],
     contract : null
 

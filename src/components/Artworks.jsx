@@ -18,6 +18,7 @@ const Artworks = () => {
   }, [nfts, end])
 
   return (
+    <section id='artworks'>
     <div className="bg-[#151c25] gradient-bg-artworks">
       <div className="w-4/5 py-10 mx-auto">
         <h4 className="text-white text-3xl font-bold uppercase text-gradient">
@@ -45,6 +46,7 @@ const Artworks = () => {
         ) : null}
       </div>
     </div>
+    </section>
   )
 }
 

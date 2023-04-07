@@ -1,14 +1,23 @@
 
 import metalogo from '../assets/images/logowhite.png'
+
 import token from '../assets/images/token.png'
 import { connectWallet } from '../Blockchain.services'
 import { setGlobalState, useGlobalState, truncate } from '../store'
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect , useNavigate} from 'react-router-dom';
 import axios from 'axios'
 
 import React, { useState, useEffect } from "react";
+import { HashLink } from 'react-router-hash-link';
 const Header = () => {
 
+
+  const navigate = useNavigate();
+
+  const navigateToDashboard = () => {
+    // 👇️ navigate to /contacts
+    navigate(`/dashboard`);
+  };
   const [connectedAccount] = useGlobalState('connectedAccount')
   const balance = useGlobalState('balance')
   console.log(balance)
@@ -30,33 +39,35 @@ const Header = () => {
       
     </div>
     <ul className='md:flex-[0.4] text-white md:flex hidden list-none flex-row justify-between items-center flex-initial '>
-        <li className='mx-4 cursor-pointer'>Market</li>
-        <li className='mx-4 cursor-pointer'>Artist</li>
-        <li className='mx-4 cursor-pointer'>Features</li>
-        <li className='mx-4 cursor-pointer'>community</li>
+        <HashLink smooth to='#artworks' > Market place </HashLink>
+        
+        <HashLink smooth to='#Work' > Work Opportunity </HashLink>
+
+        <HashLink smooth to='#Apply' > About-us </HashLink>
+
     </ul>
     <div className='flex justify-between mx-auto gap-2'>
      
 {isAuthenticated
    ? <div className='flex justify-between mx-auto gap-2'>
-     <button className='shadow-xl shadow-black text-white bg-[#bd255f] md:text-xs p-2 rounded-full' onClick={handleLogout}>
-        logout
-    </button> 
-    <button className='shadow-xl shadow-black text-white bg-[#bd255f] md:text-xs p-2 rounded-full' onClick={handleLogout}>
+    
+    <button className='shadow-xl shadow-black text-white bg-[#bd255f] md:text-xs p-2 rounded-full' onClick={navigateToDashboard}>
     dashboard
 </button>
+<button className='shadow-xl shadow-black text-white bg-[#bd255f] md:text-xs p-2 rounded-full' onClick={handleLogout}>
+        logout
+    </button> 
 
      </div> 
   
     :<button className='shadow-xl shadow-black text-white bg-[#bd255f] md:text-xs p-2 rounded-full' onClick={login}>
-    login
+    Sing-in
 </button>
 
 }
 {connectedAccount
            ? <div className='flex justify-between mx-auto gap-2 items-center'>
-           <img className='w-10 cursor-pointer' src={token} alt="token"/>
-              <h2 className='text-white flex justify-center'>96.7535</h2>
+          
            </div>
     :<button className='shadow-xl shadow-black text-white bg-[#bd255f] md:text-xs p-2 rounded-full' onClick={connectWallet}>
     Connect Wallet
